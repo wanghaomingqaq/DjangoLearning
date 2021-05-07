@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>作者</th>
+                <th>年龄</th>
+                <th>联系电话</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                {% for author in author_queryset %}
+                    <tr>
+                        <td>{{ author.name }}</td>
+                        <td>{{ author.age }}</td>
+                        <td>{{ author.author_detail.phone }}</td>
+                        <td>{{ author.author_detail.addr }}</td>
+
+                    </tr>
+
+                {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
